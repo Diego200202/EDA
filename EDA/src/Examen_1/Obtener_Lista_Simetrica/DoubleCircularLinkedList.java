@@ -53,7 +53,7 @@ public class DoubleCircularLinkedList<T> {
 			while(actual.next!=null) {
 				DoubleNode<Integer> actualNuevo = new DoubleNode<Integer>(actual.data);
 				DoubleNode<Integer> actualNegativo = new DoubleNode<Integer>(-actual.data);
-				anadirNodoFinal(actualNuevo.data);
+				anadirNodoPrincipio(actualNuevo.data);
 				anadirNodoPrincipio(actualNegativo.data);
 				actual = actual.next;
 			}
