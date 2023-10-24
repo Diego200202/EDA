@@ -10,5 +10,9 @@ public class Main {
 		
 		System.out.println("Lista simple:");
 		l.imprimirLista();
+		
+		DoubleCircularLinkedList<Integer> l2 = new DoubleCircularLinkedList<Integer>();
+		l2.obtenerListaSimetrica(l);
+		l2.imprimirLista();
 	}
 }
