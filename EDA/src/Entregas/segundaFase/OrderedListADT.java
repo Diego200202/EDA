@@ -1,4 +1,4 @@
-package Entrega1.segundaFase;
+package Entregas.segundaFase;
 
 public interface OrderedListADT<T>  extends ListADT<T> {
 	

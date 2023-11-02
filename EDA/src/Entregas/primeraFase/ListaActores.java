@@ -1,4 +1,4 @@
-package Entrega1;
+package Entregas.primeraFase;
 
 import java.util.ArrayList;
 

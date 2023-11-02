@@ -1,4 +1,4 @@
-package Entrega1.segundaFase;
+package Entregas.segundaFase;
 
 public class Node<T> {
 	public T data; 			// dato del nodo

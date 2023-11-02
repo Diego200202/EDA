@@ -1,4 +1,4 @@
-package Entrega1.segundaFase;
+package Entregas.segundaFase;
 
 public class PruebaOrderedDoubleLinkedList {	
 	
