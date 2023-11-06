@@ -8,21 +8,21 @@ public class UnorderedCircularDoubleLinkedList<T> extends DoubleLinkedList<T> im
 	        return;
 	    }
 
-	    Node<T> newNode = new Node<>(elem);
+	    Node<T> nuevo = new Node<>(elem);
 
 	    if (first == null) {
 	        // La lista está vacía, el nuevo nodo apunta a sí mismo
-	        newNode.next = newNode;
-	        newNode.prev = newNode;
+	        nuevo.next = nuevo;
+	        nuevo.prev = nuevo;
 	    } else {
 	        // La lista no está vacía, actualiza los punteros
-	        newNode.next = first;
-	        newNode.prev = first.prev;
-	        first.prev.next = newNode;
-	        first.prev = newNode;
+	        nuevo.next = first;
+	        nuevo.prev = first.prev;
+	        first.prev.next = nuevo;
+	        first.prev = nuevo;
 	    }
 
-	    first = newNode;  // Actualiza el primer nodo
+	    first = nuevo;  // Actualiza el primer nodo
 	    count++;
 	}
 
@@ -33,19 +33,19 @@ public class UnorderedCircularDoubleLinkedList<T> extends DoubleLinkedList<T> im
 	        return;
 	    }
 
-	    Node<T> newNode = new Node<>(elem);
+	    Node<T> nuevo = new Node<>(elem);
 
 	    if (first == null) {
 	        // La lista está vacía, el nuevo nodo apunta a sí mismo
-	        newNode.next = newNode;
-	        newNode.prev = newNode;
-	        first = newNode;
+	        nuevo.next = nuevo;
+	        nuevo.prev = nuevo;
+	        first = nuevo;
 	    } else {
 	        // La lista no está vacía, actualiza los punteros
-	        newNode.next = first;
-	        newNode.prev = first.prev;
-	        first.prev.next = newNode;
-	        first.prev = newNode;
+	        nuevo.next = first;
+	        nuevo.prev = first.prev;
+	        first.prev.next = nuevo;
+	        first.prev = nuevo;
 	    }
 
 	    count++;
@@ -60,7 +60,7 @@ public class UnorderedCircularDoubleLinkedList<T> extends DoubleLinkedList<T> im
 			    } else {
 			        Node<T> actual = this.first.next;
 			        while (actual != this.first) {
-			            if (actual.data.equals(target)) {  // Corrección aquí
+			            if (actual.data.equals(target)) {  
 			                Node<T> nuevo = new Node<T>(elem);
 			                nuevo.next = actual.next;
 			                nuevo.prev = actual;
