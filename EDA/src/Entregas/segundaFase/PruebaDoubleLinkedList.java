@@ -25,6 +25,7 @@ public class PruebaDoubleLinkedList {
 		l.addToRear(0);
 		l.addToRear(20);
 		l.addToFront(8);
+		l.addAfter(5, 9);
 		l.remove(new Integer(7));
 
 		

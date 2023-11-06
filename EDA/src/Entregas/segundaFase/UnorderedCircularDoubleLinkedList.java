@@ -55,27 +55,24 @@ public class UnorderedCircularDoubleLinkedList<T> extends DoubleLinkedList<T> im
 		public void addAfter(T elem, T target) {
 		// A�ade elem detr�s de otro elemento concreto, target,  que ya se encuentra en la lista
 			// �COMPLETAR OPCIONAL!
-			if(elem == null) {
-				System.out.println("Introduce el elemento que quieres añadir");
-			}else {
-				Node<T> actual = this.first.next;
-				while(actual != first) {
-					if(actual.next.data == target) {
-						Node<T> nuevo = new Node<T>(elem);
-						actual.next.prev=nuevo;
-						actual.next= nuevo;
-						nuevo.next= actual.next;
-						nuevo.prev=actual;
-						actual=nuevo;
-						this.count++;
-						return;
-						
-					}
-				actual=actual.next;
-				}
-				System.out.println("El elemento target no esta en la lista");
-			}
-			
+			 if (elem == null) {
+			        System.out.println("Introduce el elemento que quieres añadir");
+			    } else {
+			        Node<T> actual = this.first.next;
+			        while (actual != this.first) {
+			            if (actual.data.equals(target)) {  // Corrección aquí
+			                Node<T> nuevo = new Node<T>(elem);
+			                nuevo.next = actual.next;
+			                nuevo.prev = actual;
+			                actual.next.prev = nuevo;
+			                actual.next = nuevo;
+			                this.count++;
+			                return;
+			            }
+			            actual = actual.next;
+			        }
+			        System.out.println("El elemento target no está en la lista");
+			    }
 		}
 
 }
