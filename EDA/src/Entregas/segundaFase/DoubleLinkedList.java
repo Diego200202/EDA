@@ -26,27 +26,26 @@ public class DoubleLinkedList<T> implements ListADT<T> {
 	}
 
 	public T removeFirst() {
-	// Elimina el primer elemento de la lista
-        // Precondici�n: 
-		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		if(isEmpty()) {
-			System.out.println("La lista esta vacia");
-		}else if(this.size() == 1) {
-			Node<T> devolver = this.first;
-			this.first = null;
-			this.count -= 1;
-			return devolver.data;
-		}else {
-			Node<T> actual = this.first;
-			this.first = this.first.next;
-			this.first.prev = actual.prev;
-			this.first.next = actual.next.next;
-			this.count -= 1;
-			return actual.data;
-		}
-		return null;
+	    // Elimina el primer elemento de la lista
+	    if (isEmpty()) {
+	        System.out.println("La lista está vacía");
+	        return null;
+	    } else if (this.size() == 1) {
+	        Node<T> devolver = this.first;
+	        this.first = null;
+		    this.count -= 1;
+		    return devolver.data;
+	    } else {
+	    	Node<T> actual = this.first.prev;
+	    	Node<T> devolver = this.first;
+	    	this.first = this.first.next;
+	    	actual.next = this.first;
+	    	this.first.prev = actual;
+	    	this.count -= 1;
+	    	return devolver.data;
+	    }
 	}
-	
+
 	public T removeLast() {
 	// Elimina el �ltimo elemento de la lista
         // Precondici�n: 
