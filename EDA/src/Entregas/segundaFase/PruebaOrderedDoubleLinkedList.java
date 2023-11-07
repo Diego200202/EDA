@@ -10,7 +10,8 @@ public class PruebaOrderedDoubleLinkedList {
 		
 		System.out.println("##### PRIMER CASO: AMBAS LISTAS ESTAN VACIAS #####\n");
 		
-		System.out.println("Lista 1 ............");
+		System.out.println("---Las listas contienen enteros---");
+		System.out.println("\nLista 1 ............");
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
 		
@@ -24,6 +25,8 @@ public class PruebaOrderedDoubleLinkedList {
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
 		
+		System.out.println("\n---Las listas contienen personas---");
+
 		System.out.println("\nLista 3 ............");
 		l3.visualizarNodos();
 		System.out.println(" Num elementos: " + l3.size());
@@ -54,7 +57,7 @@ public class PruebaOrderedDoubleLinkedList {
 		l3.reset();
 		l4.reset();
 		
-		System.out.println("\n\n##### SEGUNDO CASO: LA LISTA RECIBIDA ESTA VACIA #####");
+		System.out.println("\n##### SEGUNDO CASO: LA LISTA RECIBIDA ESTA VACIA #####\n");
 		
 		l.add(1);
 		l.add(3);
@@ -72,6 +75,8 @@ public class PruebaOrderedDoubleLinkedList {
 		l3.add(new Persona("pedro", "2222"));
 		l3.add(new Persona("olatz", "5555"));
 		l3.remove(new Persona("", "8888"));
+
+		System.out.println("\n---Las listas contienen enteros---");
 		
 		System.out.println("Lista 1 ............");
 		l.visualizarNodos();
@@ -86,6 +91,8 @@ public class PruebaOrderedDoubleLinkedList {
 		System.out.println("\nResultado de la fusion:");
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
+
+		System.out.println("\n---Las listas contienen personas---");
 		
 		System.out.println("\nLista 3 ............");
 		l3.visualizarNodos();
@@ -128,6 +135,8 @@ public class PruebaOrderedDoubleLinkedList {
 		l4.add(new Persona("aaron", "6666"));
 		l4.add(new Persona("Zaira", "4444"));
 		l4.add(new Persona("Maria", "9999"));
+
+		System.out.println("\n---Las listas contienen enteros---");
 		
 		System.out.println("Lista 1 ............");
 		l.visualizarNodos();
@@ -142,6 +151,8 @@ public class PruebaOrderedDoubleLinkedList {
 		System.out.println("\nResultado de la fusion:");
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
+
+		System.out.println("\n---Las listas contienen personas---");
 		
 		System.out.println("\nLista 3 ............");
 		l3.visualizarNodos();
@@ -199,6 +210,8 @@ public class PruebaOrderedDoubleLinkedList {
 		l4.add(new Persona("aaron", "6666"));
 		l4.add(new Persona("Zaira", "4444"));
 		l4.add(new Persona("Maria", "9999"));
+
+		System.out.println("\n---Las listas contienen enteros---");
 		
 		System.out.println("Lista 1 ............");
 		l.visualizarNodos();
@@ -213,6 +226,8 @@ public class PruebaOrderedDoubleLinkedList {
 		System.out.println("\nResultado de la fusion:");
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
+
+		System.out.println("\n---Las listas contienen personas---");
 		
 		System.out.println("\nLista 3 ............");
 		l3.visualizarNodos();
