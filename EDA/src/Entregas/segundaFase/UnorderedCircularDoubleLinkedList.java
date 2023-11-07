@@ -5,7 +5,6 @@ public class UnorderedCircularDoubleLinkedList<T> extends DoubleLinkedList<T> im
 	public void addToFront(T elem) {
 	    if (elem == null) {
 	        System.out.println("No se puede añadir un elemento nulo");
-	        return;
 	    }
 
 	    Node<T> nuevo = new Node<>(elem);

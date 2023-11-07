@@ -2,8 +2,7 @@ package Entregas.segundaFase;
 
 public class PruebaOrderedDoubleLinkedList {	
 	
-	public static void main(String[] args)  {
-		
+	public static <T> void main(String[] args)  {
 		OrderedDoubleLinkedList<Integer> l = new OrderedDoubleLinkedList<Integer>();
 		l.add(1);
 		l.add(3);
@@ -15,7 +14,7 @@ public class PruebaOrderedDoubleLinkedList {
 		l.remove(new Integer(7));
 
 		
-		System.out.print(" Lista ...............");
+		System.out.print(" Lista ...............\n");
 		l.visualizarNodos();
 		System.out.println(" Num elementos: " + l.size());
 				
@@ -40,7 +39,7 @@ public class PruebaOrderedDoubleLinkedList {
 		l2.remove(new Persona("", "8888"));
 
 		
-		System.out.print(" Lista ...............");
+		System.out.print(" Lista ...............\n");
 		l2.visualizarNodos();
 		System.out.println(" Num elementos: " + l2.size());
 				
@@ -51,6 +50,5 @@ public class PruebaOrderedDoubleLinkedList {
 		System.out.println("7777? " + l2.find(new Persona("", "7777")));	
 		System.out.println("8888? " + l2.find(new Persona("", "8888")));	
 		
-		
-}
+	}
 }
