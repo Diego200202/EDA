@@ -6,7 +6,7 @@ public class OrderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements O
 	public void add(T elem) {
 	    Node<T> nuevo = new Node<T>(elem); // Crear un nuevo nodo con el elemento a agregar
 
-	    if (isEmpty()) { // Si la lista está vacía, simplemente agregamos el nuevo elemento
+	    if (this.isEmpty()) { // Si la lista está vacía, simplemente agregamos el nuevo elemento
 	        this.first = nuevo;
 	        this.first.next = nuevo;
 	        this.first.prev = nuevo;
@@ -53,17 +53,28 @@ public class OrderedDoubleLinkedList<T> extends DoubleLinkedList<T> implements O
 	    }
 	}
 
-
-
-
-
-	public void merge(DoubleLinkedList<T> lista){
-		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-
-
+	@Override
+	public void merge(DoubleLinkedList<T> lista) {
+	    if (this.isEmpty() && lista.isEmpty()) {
+	    	
+	    } else if (!this.isEmpty() && lista.isEmpty()) {
+	    	// No se necesita hacer nada si la lista "lista" está vacía
+	    } else if (this.isEmpty() && !lista.isEmpty()) {
+	        // Si la lista actual está vacía, simplemente asignamos la lista "lista" a la lista actual
+	        this.first = lista.first;
+	        this.count = lista.count;
+	    } else {
+	    	Node<T> actual = lista.first;
+	    	while (actual.next != lista.first) {
+	    		this.add(actual.data); // Utilizamos el método add para agregar elementos a la lista actual
+	    		actual = actual.next;
+	    	}
+	    	this.add(actual.data);
+	    }
 	}
-
 	
-
-
+	public void reset() {
+		this.first = null;
+		this.count = 0;
+	}
 }
