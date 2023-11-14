@@ -20,8 +20,8 @@ public class ProgramaPrincipal {
         graph.print();
     
         // Verificar si dos actores están conectados
-        String actor1 = "Logan Miller";
-        String actor2 = "Q100977063";
+        String actor1 = "Brad Pitt";
+        String actor2 = "Cate Blanchett";
     
         boolean estanConectados = graph.estanConectados(actor1, actor2);
         System.out.println("\n¿Están conectados " + actor1 + " y " + actor2 + "? " + estanConectados);
