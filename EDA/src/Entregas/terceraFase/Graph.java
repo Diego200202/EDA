@@ -96,6 +96,55 @@ public class Graph {
 	
 		return enc;
 	}
+
+	public ArrayList<String> listaEstanConectados(String a1, String a2) {
+
+        Queue<Integer> porExaminar = new LinkedList<>();
+        Integer pos1 = th.get(a1);
+        Integer pos2 = th.get(a2);
+        ArrayList<String> relaciones = new ArrayList<>();
+
+        // Verificar si los actores están presentes en el grafo
+        if (pos1 == null || pos2 == null) {
+            System.out.println("Uno o ambos actores no están presentes en el grafo.");
+            return relaciones;
+        }
+
+        boolean[] examinados = new boolean[th.size()];
+        HashMap<Integer, Integer> padre = new HashMap<>();
+
+        porExaminar.add(pos1);
+        examinados[pos1] = true;
+
+        while (!porExaminar.isEmpty()) {
+            int actual = porExaminar.poll();
+
+            for (int vecino : adjList[actual]) {
+                if (!examinados[vecino]) {
+                    porExaminar.add(vecino);
+                    examinados[vecino] = true;
+                    padre.put(vecino, actual);
+                }
+            }
+        }
+
+        // Construir la cadena de conexiones
+        if (examinados[pos2]) {
+            int actual = pos2;
+            while (actual != pos1) {
+                relaciones.add(keys[actual]);
+                actual = padre.get(actual);
+            }
+            relaciones.add(keys[pos1]);
+
+            // Invertir la lista para que esté en orden correcto
+            Collections.reverse(relaciones);
+        } else {
+            System.out.println("No hay conexión entre " + a1 + " y " + a2);
+        }
+
+        return relaciones;
+    }
 	
 
 	public void cargarFicheros(String pString, ListaPelis lista) {

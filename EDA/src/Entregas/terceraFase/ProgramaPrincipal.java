@@ -1,5 +1,7 @@
 package Entregas.terceraFase;
 
+import java.util.ArrayList;
+
 public class ProgramaPrincipal {
     public static void main(String[] args) {
         // Crear una instancia de ListaPelis
@@ -17,7 +19,7 @@ public class ProgramaPrincipal {
     
         // Imprimir el grafo
         System.out.println("Grafo:");
-        graph.print();
+        //graph.print();
     
         // Verificar si dos actores están conectados
         String actor1 = "Brad Pitt";
@@ -25,6 +27,11 @@ public class ProgramaPrincipal {
     
         boolean estanConectados = graph.estanConectados(actor1, actor2);
         System.out.println("\n¿Están conectados " + actor1 + " y " + actor2 + "? " + estanConectados);
+        
+        ArrayList<String> listaConectados = new ArrayList<>();
+        for(String s : listaConectados){
+            System.out.println(s);
+        }
     }
     
 }
