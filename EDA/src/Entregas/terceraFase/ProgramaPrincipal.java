@@ -1,5 +1,6 @@
 package Entregas.terceraFase;
 
+import java.util.*;
 public class ProgramaPrincipal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
