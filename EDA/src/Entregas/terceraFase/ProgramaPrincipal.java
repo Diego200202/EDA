@@ -1,9 +1,8 @@
 package Entregas.terceraFase;
 
-import java.util.ArrayList;
-
 public class ProgramaPrincipal {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         // Crear una instancia de ListaPelis
         ListaPelis lista = new ListaPelis();
     
@@ -12,7 +11,10 @@ public class ProgramaPrincipal {
         // Crear una instancia de Graph
         Graph graph = new Graph();
 
-        graph.cargarFicheros("/home/diego/EDA/movies-dir/", lista);
+        System.out.println("Introduce la ruta al directorio donde estan los archivos:");
+        String dir = sc.nextLine();
+
+        graph.cargarFicheros(dir, lista);
     
         // Crear el grafo a partir de la lista de películas
         graph.crearGrafo(lista);
@@ -27,11 +29,6 @@ public class ProgramaPrincipal {
     
         boolean estanConectados = graph.estanConectados(actor1, actor2);
         System.out.println("\n¿Están conectados " + actor1 + " y " + actor2 + "? " + estanConectados);
-        
-        ArrayList<String> listaConectados = new ArrayList<>();
-        for(String s : listaConectados){
-            System.out.println(s);
-        }
     }
     
 }
