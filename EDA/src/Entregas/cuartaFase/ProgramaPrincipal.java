@@ -23,7 +23,7 @@ public class ProgramaPrincipal {
 
         // Imprimir el grafo
         System.out.println("Grafo:");
-        graph.print();
+        //graph.print();
 
         // Verificar si dos actores están conectados
         String actor1 = "Brad Pitt";
@@ -31,6 +31,18 @@ public class ProgramaPrincipal {
 
         boolean estanConectados = graph.estanConectados(actor1, actor2);
         System.out.println("\n¿Están conectados " + actor1 + " y " + actor2 + "? " + estanConectados);
+    
+        graph.tamaño();
+        
+        System.out.println(graph.prInicial());
+
+        for (Map.Entry<String, Double> entry : graph.pageRank(0.85, 100).entrySet()) {
+            String actor = entry.getKey();
+            Double pageRank = entry.getValue();
+            
+            System.out.println(actor + ": " + pageRank);
+        }
+
     }
 
 }

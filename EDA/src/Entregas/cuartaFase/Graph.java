@@ -51,6 +51,10 @@ public class Graph {
 		}
 	}
 
+	public void tamaño(){
+		System.out.println(this.th.size());
+	}
+
 	public void print() {
 		for (int i = 0; i < adjList.length; i++) {
 			System.out.print("Element: " + i + " " + keys[i] + " --> ");
@@ -195,8 +199,46 @@ public class Graph {
 		return lineaSeparada;
 	}
 
-    public HashMap<String, Double> pageRank(){
-        return null;
+	public HashMap<String, Double> pageRank(double dampingFactor, int iteraciones) {
+        double[] pagerank = new double[th.size()];
+        double[] pagerankNuevo = new double[th.size()];
+
+        // Inicializar pagerank
+        for (int i = 0; i < pagerank.length; i++) {
+            pagerank[i] = prInicial();
+        }
+
+        // Algoritmo PageRank
+        for (int iteracion = 0; iteracion < iteraciones; iteracion++) {
+            // Inicializar el nuevo PageRank en cada iteración
+            Arrays.fill(pagerankNuevo, 0.0);
+
+            for (int i = 0; i < pagerank.length; i++) {
+                double sumatoria = 0.0;
+
+                // Calcular la sumatoria de los valores de PageRank de los nodos que enlazan a A
+                for (int vecino : adjList[i]) {
+                    sumatoria += pagerank[vecino] / adjList[vecino].size();
+                }
+
+                // Calcular el nuevo valor de PageRank según la fórmula proporcionada
+                pagerankNuevo[i] = (1.0 - dampingFactor) / th.size() + dampingFactor * sumatoria;
+            }
+
+            // Actualizar el PageRank para la siguiente iteración
+            pagerank = Arrays.copyOf(pagerankNuevo, pagerankNuevo.length);
+        }
+
+        // Crear un mapa para devolver los resultados
+        HashMap<String, Double> resultados = new HashMap<>();
+        for (int i = 0; i < pagerank.length; i++) {
+            resultados.put(keys[i], pagerank[i]);
+        }
+
+        return resultados;
     }
 
+	public double prInicial(){
+		return 1.0/th.size();
+	}
 }
