@@ -4,6 +4,9 @@ import java.util.*;
 
 public class ProgramaPrincipal {
     public static void main(String[] args) {
+
+        
+
         Scanner sc = new Scanner(System.in);
         // Crear una instancia de ListaPelis
         ListaPelis lista = new ListaPelis();
@@ -15,6 +18,9 @@ public class ProgramaPrincipal {
 
         System.out.println("Introduce la ruta al directorio donde estan los archivos:");
         String dir = sc.nextLine();
+        sc.close();
+
+        StopWatch timer = new StopWatch();
 
         graph.cargarFicheros(dir, lista);
 
@@ -36,12 +42,14 @@ public class ProgramaPrincipal {
         
         System.out.println(graph.prInicial());
 
-        for (Map.Entry<String, Double> entry : graph.pageRank(0.85, 100).entrySet()) {
-            String actor = entry.getKey();
-            Double pageRank = entry.getValue();
+        for (Par entry : graph.buscarActores(graph.pageRank(0.85, 1000))) {
+            String actor = entry.getActor();
+            Double pageRank = entry.getPr();
             
             System.out.println(actor + ": " + pageRank);
         }
+
+        System.out.println("Tiempo(segundos): " + timer.elapsedTime());
 
     }
 

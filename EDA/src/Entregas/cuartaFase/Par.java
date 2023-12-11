@@ -1,12 +1,19 @@
 package Entregas.cuartaFase;
 
-import java.util.*;
-
 public class Par {
     String actor;
     double pageRank;
 
-    public ArrayList<Par> buscarActores(ArrayList<String> actores){
-        return null;
+    public Par(String actor, double pr) {
+        this.actor = actor;
+        this.pageRank = pr;
+    }
+
+    public String getActor() {
+        return this.actor;
+    }
+
+    public double getPr() {
+        return this.pageRank;
     }
 }
