@@ -207,26 +207,14 @@ public class Graph {
 	}
 
 	public ArrayList<Par> buscarActores(HashMap<String, Double> hashMap) {
-		// Convertir las entradas del HashMap a una lista y ordenarla
-		List<Map.Entry<String, Double>> entryList = hashMap.entrySet().stream()
-				.collect(Collectors.toList());
+        // Ordenar la lista de pares directamente
+        ArrayList<Par> listaOrdenada = hashMap.entrySet().stream()
+                .map(entry -> new Par(entry.getKey(), entry.getValue()))
+                .sorted(Comparator.comparing(Par::getPr).reversed())
+                .collect(Collectors.toCollection(ArrayList::new));
 
-		entryList.sort(Map.Entry.<String, Double>comparingByValue().reversed());
-
-		// Crear la lista ordenada
-		ArrayList<Par> listaOrdenada = new ArrayList<>();
-
-		// Imprimir los resultados
-		for (Map.Entry<String, Double> entry : entryList) {
-			// Añadir a la lista ordenada
-			String actor = entry.getKey();
-			double pr = entry.getValue();
-			Par par = new Par(actor, pr);
-			listaOrdenada.add(par);
-		}
-
-		return listaOrdenada;
-	}
+        return listaOrdenada;
+    }
 
 	public static String[] separadorDeLineas(String pString) {
 		return pString.split(" ### ");
