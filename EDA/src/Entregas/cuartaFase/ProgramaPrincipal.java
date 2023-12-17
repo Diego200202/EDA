@@ -48,7 +48,7 @@ public class ProgramaPrincipal {
 
         System.out.println("Tiempo(segundos) en cargar los ficheros y cerar el grafo: " + tiempo);
         System.out.println("Tiempo(segundos) en calcular el PageRank y crear la lista: " + timer3.elapsedTime());
-        System.out.println("Tiempo total: " + timer1.elapsedTime());
+        System.out.println("Tiempo total paa 1000 iteraciones en el calculo del pageRank: " + timer1.elapsedTime());
         System.out.println("Esto es sin la lista");
 
     }
