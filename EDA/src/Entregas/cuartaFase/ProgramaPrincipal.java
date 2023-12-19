@@ -14,8 +14,8 @@ public class ProgramaPrincipal {
 
         //Reloj para cargar ficheros y crear el grafo
         StopWatch timer2 = new StopWatch();
+
         // Crear una instancia de Graph
-        
         Graph graph = new Graph();
 
         System.out.println("Introduce la ruta al directorio donde estan los archivos:");
@@ -37,9 +37,9 @@ public class ProgramaPrincipal {
         //Reloj para calcular Pagerank y crear l alista ordenada
         StopWatch timer3 = new StopWatch();
 
-        graph.buscarActores(graph.pageRank(0.85, 1000));
+        graph.buscarActores(graph.getLista());
 
-        /*for (Par entry : graph.buscarActores(graph.pageRank(0.85, 1000))) {
+        /*for (Par entry : graph.buscarActores(graph.getLista())) {
             String actor = entry.getActor();
             Double pageRank = entry.getPr();
 
@@ -49,7 +49,7 @@ public class ProgramaPrincipal {
         System.out.println("Tiempo(segundos) en cargar los ficheros y cerar el grafo: " + tiempo);
         System.out.println("Tiempo(segundos) en calcular el PageRank y crear la lista: " + timer3.elapsedTime());
         System.out.println("Tiempo total paa 1000 iteraciones en el calculo del pageRank: " + timer1.elapsedTime());
-        System.out.println("Esto es sin la lista");
+        System.out.println("Esto ha sido usando la lista");
 
     }
 
