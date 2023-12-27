@@ -206,9 +206,12 @@ public class Graph {
         return 1.0 / th.size();
     }
 
+    /*Este metodo calcula el pagerank y devuelve la lista ordenada para 1000 iteraciones,
+    si se quiere cambiar el numero de iteraciones hay que cambiar el segundo parametro 
+    que se pasa en la primera linea de este metodo*/
     public ArrayList<Par> buscarActores(List<String> actores) {
         // Convertir las entradas del HashMap a una lista y ordenarla
-        HashMap<String, Double> hashMap = this.pageRank(0.85, 100);
+        HashMap<String, Double> hashMap = this.pageRank(0.85, 1000);
 
         ArrayList<Par> resultado = new ArrayList<>();
 
